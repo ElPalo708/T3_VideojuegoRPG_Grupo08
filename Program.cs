@@ -2,6 +2,11 @@
 using T3_VideojuegoRPG_Grupo08.Mapa;
 using T3_VideojuegoRPG_Grupo08.Sistema;
 
+Console.WriteLine("=== RPG GRUPO 08 ===");
+Console.WriteLine("Pulsa una tecla para comenzar...");
+Console.ReadKey(true);
+Console.Clear();
+
 EncuentrosRandom encuentros = new EncuentrosRandom();
 
 Jugador jugador = new Jugador
