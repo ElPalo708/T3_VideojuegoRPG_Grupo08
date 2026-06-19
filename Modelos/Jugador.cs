@@ -22,4 +22,27 @@ public class Jugador
 
     public int Oro { get; set; } = 0;
     public int Experiencia { get; set; } = 0;
+
+    public void GanarExperiencia(int exp)
+    {
+        Experiencia += exp;
+
+        while (Experiencia >= Nivel * 100)
+        {
+            Experiencia -= Nivel * 100;
+            Nivel++;
+
+            HPMax += 20;
+            HP = HPMax;
+
+            MPMax += 10;
+            MP = MPMax;
+
+            Ataque += 3;
+            Defensa += 2;
+
+            Console.WriteLine($"\n¡SUBISTE A NIVEL {Nivel}!");
+            Console.WriteLine("Tus estadísticas han aumentado.");
+        }
+    }
 }

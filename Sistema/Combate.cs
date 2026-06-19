@@ -137,14 +137,24 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
             else
             {
                 Console.WriteLine("¡Victoria!");
+
                 jugador.Oro += enemigo.Oro;
-                jugador.Experiencia += enemigo.Experiencia;
+                jugador.GanarExperiencia(enemigo.Experiencia);
 
-                Console.WriteLine(
-                    $"Ganaste {enemigo.Oro} oro y {enemigo.Experiencia} EXP."
-                );
+                Console.WriteLine();
+                Console.WriteLine($"Ganaste {enemigo.Oro} de oro.");
+                Console.WriteLine($"Ganaste {enemigo.Experiencia} de experiencia.");
+
+                Console.WriteLine();
+                Console.WriteLine("=== ESTADÍSTICAS ===");
+                Console.WriteLine($"Nivel: {jugador.Nivel}");
+                Console.WriteLine($"HP: {jugador.HP}/{jugador.HPMax}");
+                Console.WriteLine($"MP: {jugador.MP}/{jugador.MPMax}");
+                Console.WriteLine($"Ataque: {jugador.Ataque}");
+                Console.WriteLine($"Defensa: {jugador.Defensa}");
+                Console.WriteLine($"EXP: {jugador.Experiencia}/{jugador.Nivel * 100}");
+                Console.WriteLine($"Oro: {jugador.Oro}");
             }
-
             Console.WriteLine("\nPresiona una tecla para volver al mapa...");
             Console.ReadKey(true);
         }
