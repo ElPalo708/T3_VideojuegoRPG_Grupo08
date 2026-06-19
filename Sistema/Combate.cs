@@ -276,6 +276,7 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
                 Console.WriteLine();
                 Console.WriteLine($"Ganaste {enemigo.Oro} de oro.");
                 Console.WriteLine($"Ganaste {enemigo.Experiencia} de experiencia.");
+                Historia.RevisarFinJuego(jugador);
 
                 Console.WriteLine();
                 Console.WriteLine("=== ESTADÍSTICAS ===");

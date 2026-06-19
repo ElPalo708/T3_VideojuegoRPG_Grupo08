@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("T3_VideojuegoRPG_Grupo08")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b28468854d7dd029d650ec2794bd0fc5d1f4960e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ce082c62b0269da9a65e2a1ab111f50f5331e18")]
 [assembly: System.Reflection.AssemblyProductAttribute("T3_VideojuegoRPG_Grupo08")]
 [assembly: System.Reflection.AssemblyTitleAttribute("T3_VideojuegoRPG_Grupo08")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
