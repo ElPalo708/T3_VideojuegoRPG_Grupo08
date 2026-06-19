@@ -8,19 +8,19 @@
     "net10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Us\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Us\\T3_VideojuegoRPG_Grupo08\\T3_VideojuegoRPG_Grupo08.csproj",
+      "projectUniqueName": "D:\\visualcode\\Juego\\T3_VideojuegoRPG_Grupo08\\T3_VideojuegoRPG_Grupo08.csproj",
       "projectName": "T3_VideojuegoRPG_Grupo08",
-      "projectPath": "C:\\Users\\Us\\T3_VideojuegoRPG_Grupo08\\T3_VideojuegoRPG_Grupo08.csproj",
-      "packagesPath": "C:\\Users\\Us\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Us\\T3_VideojuegoRPG_Grupo08\\obj\\",
+      "projectPath": "D:\\visualcode\\Juego\\T3_VideojuegoRPG_Grupo08\\T3_VideojuegoRPG_Grupo08.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "D:\\visualcode\\Juego\\T3_VideojuegoRPG_Grupo08\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Us\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

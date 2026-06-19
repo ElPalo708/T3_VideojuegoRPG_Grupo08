@@ -2,6 +2,7 @@
 using T3_VideojuegoRPG_Grupo08.Mapa;
 using T3_VideojuegoRPG_Grupo08.Sistema;
 
+
 Console.WriteLine("=== RPG GRUPO 08 ===");
 Console.WriteLine("Pulsa una tecla para comenzar...");
 Console.ReadKey(true);
@@ -47,10 +48,12 @@ while (true)
 
     mapa.MoverJugador(jugador, nuevoX, nuevoY);
 
-    if(encuentros.VerificarEncuentro())
-    {
-        Console.WriteLine("¡Has encontrado un enemigo!");
-        Console.WriteLine("Presiona cualquier tecla para continuar...");
-        Console.ReadKey(true);
-    }
+if (encuentros.VerificarEncuentro())
+{
+    Console.WriteLine("¡Has encontrado un enemigo!");
+    Console.ReadKey(true);
+
+    Combate combate = new Combate();
+    combate.Iniciar(jugador);
 }
+}   
