@@ -54,4 +54,47 @@ public class Historia
             Console.WriteLine("\n¡¡SUBISTE DE NIVEL!! Ahora eres Nivel " + jugador.Nivel);
         }
         Console.ReadKey();
+    }// 3. Objetos del mapa
+    public static void AgarrarObjeto(Jugador jugador, string nombreObjeto)
+    {
+        Console.Clear();
+        if (nombreObjeto == "pocion")
+        {
+            jugador.VidaActual = jugador.VidaActual + 40;
+            if (jugador.VidaActual > jugador.VidaMaxima)
+            {
+                jugador.VidaActual = jugador.VidaMaxima;
+            }
+            Console.WriteLine("Agarraste una Pocion. Recuperas 40 de vida.");
+        }
+        if (nombreObjeto == "espada")
+        {
+            jugador.Ataque = jugador.Ataque + 8;
+            Console.WriteLine("¡Encontraste una Espada! Tu Ataque sube permanentemente +8.");
+        }
+        Console.ReadKey();
+    // 4. Final del juego
+    public static void RevisarFinJuego(Jugador jugador)
+    {
+        // Condicion de derrota
+        if (jugador.VidaActual <= 0)
+        {
+            Console.Clear();
+            Console.WriteLine("========================");
+            Console.WriteLine("      GAME OVER         ");
+            Console.WriteLine("========================");
+            Console.WriteLine("Moriste en el juego. Fin de la partida.");
+            Environment.Exit(0);
+        }
+
+        // Condicion de victoria
+        if (jugador.Oro >= 200)
+        {
+            Console.Clear();
+            Console.WriteLine("========================");
+            Console.WriteLine("    ¡GANASTE EL JUEGO!  ");
+            Console.WriteLine("========================");
+            Console.WriteLine("Conseguiste el oro suficiente para escapar de SAO.");
+            Environment.Exit(0);
+        }
     }
