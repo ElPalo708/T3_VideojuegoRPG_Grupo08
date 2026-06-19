@@ -101,6 +101,13 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
 
                         Console.WriteLine("No pudiste escapar.");
                         break;
+
+                    default:
+
+                        Console.WriteLine("Opción inválida.");
+                        Console.WriteLine("\nPresiona una tecla para continuar...");
+                        Console.ReadKey(true);
+                        continue;
                 }
 
                 if (enemigo.HP > 0)
