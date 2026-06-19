@@ -3,12 +3,20 @@ using T3_VideojuegoRPG_Grupo08.Mapa;
 using T3_VideojuegoRPG_Grupo08.Sistema;
 
 Console.Clear();
-Console.WriteLine("=== BIENVENIDO A SWORD ART ONLINE ===");
-Console.WriteLine("Estas atrapado en el juego. Si mueres aqui, mueres en la vida real.");
-Console.WriteLine("Elige tu camino inicial:");
-Console.WriteLine("1. Ir por el bosque oscuro.");
-Console.WriteLine("2. Ir por las ruinas antiguas.");
-Console.Write("Selecciona (1 o 2): ");
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("||                                                      ||");
+            Console.WriteLine("||            BIENVENIDO A SWORD ART ONLINE             ||");
+            Console.WriteLine("||                                                      ||");
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("\n[SISTEMA]: Has quedado atrapado en el mundo de Aincrad.");
+            Console.WriteLine("La única forma de salir es alcanzar el piso 100 y derrotar al jefe.");
+            Console.WriteLine("Si tu vida llega a cero en el juego, morirás en la vida real.");
+            Console.WriteLine("\nEl destino de miles de jugadores está en tus manos...");
+            Console.WriteLine("----------------------------------------------------------");
+            Console.WriteLine("Elige tu punto de partida:");
+            Console.WriteLine("1. Bosque de los Lamentos (Zona de inicio).");
+            Console.WriteLine("2. Ruinas de la Fortaleza (Zona de alto riesgo).");
+            Console.Write("\nSelecciona tu destino (1 o 2): ");
 
 string opcion = Console.ReadLine();
 string zonaActual = "";
