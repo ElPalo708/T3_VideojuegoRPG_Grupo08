@@ -29,7 +29,7 @@ public class Historia
         Console.WriteLine("Presiona una tecla para continuar...");
         Console.ReadKey();
     }
-// [AUMENTADO AQUÍ] 2. Experiencia y Oro
+// 2. Experiencia, Oro y Niveles
     public static void DarRecompensas(Jugador jugador, int expGanada, int oroGanado)
     {
         Console.WriteLine("\n¡Ganaste la pelea!");
@@ -38,5 +38,20 @@ public class Historia
 
         jugador.Oro = jugador.Oro + oroGanado;
         jugador.ExpActual = jugador.ExpActual + expGanada;
+
+        // Logica simple para subir de nivel
+        if (jugador.ExpActual >= jugador.ExpRequerida)
+        {
+            jugador.Nivel = jugador.Nivel + 1;
+            jugador.ExpActual = jugador.ExpActual - jugador.ExpRequerida;
+            jugador.ExpRequerida = jugador.ExpRequerida + 50;
+
+            // Subir estadisticas basicas
+            jugador.VidaMaxima = jugador.VidaMaxima + 20;
+            jugador.VidaActual = jugador.VidaMaxima; 
+            jugador.Ataque = jugador.Ataque + 5;
+
+            Console.WriteLine("\n¡¡SUBISTE DE NIVEL!! Ahora eres Nivel " + jugador.Nivel);
+        }
+        Console.ReadKey();
     }
-}
