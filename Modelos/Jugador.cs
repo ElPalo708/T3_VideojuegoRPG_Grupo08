@@ -40,9 +40,42 @@ public class Jugador
 
             Ataque += 3;
             Defensa += 2;
+            Velocidad += 1;
 
             Console.WriteLine($"\n¡SUBISTE A NIVEL {Nivel}!");
             Console.WriteLine("Tus estadísticas han aumentado.");
+            Console.WriteLine($"Velocidad actual: {Velocidad}");
         }
     }
+    public void UsarObjeto(Objeto objeto)
+    {
+    switch (objeto.Tipo)
+    {
+        case "HP":
+            HP += objeto.Valor;
+            if (HP > HPMax)
+                HP = HPMax;
+            break;
+
+        case "MP":
+            MP += objeto.Valor;
+            if (MP > MPMax)
+                MP = MPMax;
+            break;
+
+        case "ATAQUE":
+            Ataque += objeto.Valor;
+            break;
+
+        case "DEFENSA":
+            Defensa += objeto.Valor;
+            break;
+
+        case "VELOCIDAD":
+            Velocidad += objeto.Valor;
+            break;
+    }
+
+    Console.WriteLine($"Obtuviste: {objeto.Nombre}");
+    }    
 }

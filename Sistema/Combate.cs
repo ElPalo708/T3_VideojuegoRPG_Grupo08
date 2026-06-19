@@ -26,6 +26,19 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
                 20 * nivelEnemigo,
                 15 * nivelEnemigo
             );
+            
+            bool jugadorPrimero = jugador.Velocidad >= enemigo.Velocidad;
+
+            bool defendiendo = false;
+
+            if (jugadorPrimero)
+            {   
+                Console.WriteLine("¡Eres más rápido y actuarás primero!");
+            }
+            else
+            {
+                Console.WriteLine($"{enemigo.Nombre} es más rápido y actuará primero.");
+            }
 
             while (jugador.HP > 0 && enemigo.HP > 0)
             {
@@ -36,11 +49,13 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
                 Console.WriteLine("Jugador");
                 Console.WriteLine($"HP: {jugador.HP}/{jugador.HPMax}");
                 Console.WriteLine($"MP: {jugador.MP}/{jugador.MPMax}");
+                Console.WriteLine($"VEL: {jugador.Velocidad}");
 
                 Console.WriteLine();
 
                 Console.WriteLine($"{enemigo.Nombre} (Nivel {enemigo.Nivel})");
                 Console.WriteLine($"HP: {enemigo.HP}/{enemigo.HPMax}");
+                Console.WriteLine($"VEL: {enemigo.Velocidad}");
 
                 Console.WriteLine();
                 Console.WriteLine("1. Atacar");
@@ -49,6 +64,28 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
                 Console.WriteLine("4. Escapar");
 
                 string opcion = Console.ReadLine();
+
+                if (!jugadorPrimero && enemigo.HP > 0)
+                {
+                    int dañoEnemigo =
+                        (enemigo.Nivel + enemigo.Ataque)
+                        - (jugador.Nivel + jugador.Defensa);
+
+                    if (dañoEnemigo < 1)
+                        dañoEnemigo = 1;
+
+                    jugador.HP -= dañoEnemigo;
+
+                    Console.WriteLine(
+                        $"{enemigo.Nombre} te hizo {dañoEnemigo} de daño."
+                    );
+
+                    Console.WriteLine("\nPresiona una tecla para continuar...");
+                    Console.ReadKey(true);
+
+                    if (jugador.HP <= 0)
+                        break;
+                }
 
                 switch (opcion)
                 {
@@ -71,27 +108,93 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
 
                     case "2":
 
-                        Console.WriteLine("Te preparas para defenderte.");
+                    defendiendo = true;
 
-                        break;
+                    Console.WriteLine("Preparas tu defensa para el próximo ataque.");
+                    Console.WriteLine($"Valor de defendiendo: {defendiendo}");
+
+                    break;
 
                     case "3":
 
-                        if (jugador.MP >= 10)
+                        Console.WriteLine("=== HECHIZOS ===");
+                        Console.WriteLine("1. Bola de Fuego (10 MP)");
+                        Console.WriteLine("2. Rayo (15 MP)");
+                        Console.WriteLine("3. Curación (12 MP)");
+
+                        string hechizo = Console.ReadLine();
+
+                        switch (hechizo)
                         {
-                            jugador.MP -= 10;
+                            case "1":
 
-                            int dañoMagia = jugador.Ataque + 15;
+                                if (jugador.MP >= 10)
+                                {
+                                    jugador.MP -= 10;
 
-                            enemigo.HP -= dañoMagia;
+                                    int dañoMagia = jugador.Ataque + 15;
 
-                            Console.WriteLine(
-                                $"¡Bola de Fuego! Daño: {dañoMagia}"
-                            );
-                        }
-                        else
-                        {
-                            Console.WriteLine("No tienes suficiente MP.");
+                                    enemigo.HP -= dañoMagia;
+
+                                    Console.WriteLine(
+                                        $"¡Bola de Fuego! Daño: {dañoMagia}"
+                                    );
+                                }
+                                else
+                                {
+                                    Console.WriteLine("No tienes suficiente MP.");
+                                }
+
+                                break;
+
+                            case "2":
+
+                                if (jugador.MP >= 15)
+                                {
+                                    jugador.MP -= 15;
+
+                                    int dañoRayo = jugador.Ataque + 25;
+
+                                    enemigo.HP -= dañoRayo;
+
+                                    Console.WriteLine(
+                                        $"¡Rayo! Daño: {dañoRayo}"
+                                    );
+                                }
+                                else
+                                {
+                                    Console.WriteLine("No tienes suficiente MP.");
+                                }
+
+                                break;
+
+                            case "3":
+
+                                if (jugador.MP >= 12)
+                                {
+                                    jugador.MP -= 12;
+
+                                    int curacion = 30;
+
+                                    jugador.HP += curacion;
+
+                                    if (jugador.HP > jugador.HPMax)
+                                        jugador.HP = jugador.HPMax;
+
+                                    Console.WriteLine(
+                                        $"¡Te curaste {curacion} HP!"
+                                    );
+                                }
+                                else
+                                {
+                                    Console.WriteLine("No tienes suficiente MP.");
+                                }
+
+                                break;
+
+                            default:
+                                Console.WriteLine("Hechizo inválido.");
+                                break;
                         }
 
                         break;
@@ -117,11 +220,21 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
                         continue;
                 }
 
-                if (enemigo.HP > 0)
+                if (jugadorPrimero && enemigo.HP > 0)
+
+                Console.WriteLine($"Antes del ataque enemigo: {defendiendo}");
+
+                if (jugadorPrimero && enemigo.HP > 0)
                 {
                     int dañoEnemigo =
                         (enemigo.Nivel + enemigo.Ataque)
                         - (jugador.Nivel + jugador.Defensa);
+
+                    if (defendiendo)
+                    {
+                        dañoEnemigo -= jugador.Defensa * 2;
+                        Console.WriteLine("¡Bloqueaste parte del ataque!");
+                    }
 
                     if (dañoEnemigo < 1)
                         dañoEnemigo = 1;
@@ -131,6 +244,8 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
                     Console.WriteLine(
                         $"{enemigo.Nombre} te hizo {dañoEnemigo} de daño."
                     );
+
+                    defendiendo = false;
                 }
 
                 Console.WriteLine("\nPresiona una tecla para continuar...");
@@ -148,6 +263,16 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
                 jugador.Oro += enemigo.Oro;
                 jugador.GanarExperiencia(enemigo.Experiencia);
 
+                int drop = rnd.Next(100);
+                if (drop < 25)
+                Console.WriteLine($"Drop: {drop}");
+                {
+                    Objeto objeto = GenerarObjeto();
+                    Console.WriteLine($"¡El enemigo soltó {objeto.Nombre}!");
+                    jugador.UsarObjeto(objeto);
+                    
+                }
+
                 Console.WriteLine();
                 Console.WriteLine($"Ganaste {enemigo.Oro} de oro.");
                 Console.WriteLine($"Ganaste {enemigo.Experiencia} de experiencia.");
@@ -164,6 +289,45 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
             }
             Console.WriteLine("\nPresiona una tecla para volver al mapa...");
             Console.ReadKey(true);
+        }
+        private Objeto GenerarObjeto()
+        {
+            Random rnd = new Random();
+
+            int tipo = rnd.Next(5);
+
+            switch (tipo)
+            {
+                case 0:
+                    return new Objeto(
+                        "Poción de Vida",
+                        "HP",
+                        30);
+
+                case 1:
+                    return new Objeto(
+                        "Poción de Maná",
+                        "MP",
+                        20);
+
+                case 2:
+                    return new Objeto(
+                        "Espada de Hierro",
+                        "ATAQUE",
+                        5);
+
+                case 3:
+                    return new Objeto(
+                        "Escudo Reforzado",
+                        "DEFENSA",
+                        3);
+
+                default:
+                    return new Objeto(
+                        "Botas Ligeras",
+                        "VELOCIDAD",
+                        2);
+            }
         }
     }
 }

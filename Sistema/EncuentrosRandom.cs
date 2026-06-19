@@ -9,7 +9,7 @@ public class EncuentrosRandom
     {
         int chance = random.Next(100);
         
-        if (chance < 20)
+        if (chance < 5)
         {
             return true;
         }
