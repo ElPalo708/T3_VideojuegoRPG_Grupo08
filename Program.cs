@@ -17,6 +17,10 @@ Mapa mapa = new Mapa();
 while (true)
 {
     Historia.RevisarFinJuego(jugador);
+<<<<<<< HEAD
+=======
+
+>>>>>>> f96793f471f02bc87ae6b6bee1c958260351417b
     mapa.Dibujar(jugador);
 
     ConsoleKey tecla = Console.ReadKey(true).Key;
@@ -45,12 +49,12 @@ while (true)
 
     mapa.MoverJugador(jugador, nuevoX, nuevoY);
 
-if (encuentros.VerificarEncuentro())
-{
-    Console.WriteLine("¡Has encontrado un enemigo!");
-    Console.ReadKey(true);
+    if (encuentros.VerificarEncuentro())
+    {
+        Console.WriteLine("¡Has encontrado un enemigo!");
+        Console.ReadKey(true);
 
-    Combate combate = new Combate();
-    combate.Iniciar(jugador);
-}
-}   
+        Combate combate = new Combate();
+        combate.Iniciar(jugador);
+    }
+}  
