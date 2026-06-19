@@ -1,0 +1,15 @@
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\bin\Debug\net10.0\T3_VideojuegoRPG_Grupo08.exe
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\bin\Debug\net10.0\T3_VideojuegoRPG_Grupo08.dll
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\obj\Debug\net10.0\T3_VideojuegoRPG_Grupo08.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\obj\Debug\net10.0\T3_VideojuegoRPG_Grupo08.AssemblyInfoInputs.cache
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\obj\Debug\net10.0\T3_VideojuegoRPG_Grupo08.AssemblyInfo.cs
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\obj\Debug\net10.0\T3_VideojuegoRPG_Grupo08.csproj.CoreCompileInputs.cache
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\obj\Debug\net10.0\T3_VideojuegoRPG_Grupo08.sourcelink.json
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\obj\Debug\net10.0\T3_VideojuegoRPG_Grupo08.dll
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\obj\Debug\net10.0\refint\T3_VideojuegoRPG_Grupo08.dll
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\obj\Debug\net10.0\T3_VideojuegoRPG_Grupo08.pdb
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\bin\Debug\net10.0\T3_VideojuegoRPG_Grupo08.deps.json
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\bin\Debug\net10.0\T3_VideojuegoRPG_Grupo08.runtimeconfig.json
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\bin\Debug\net10.0\T3_VideojuegoRPG_Grupo08.pdb
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\obj\Debug\net10.0\T3_VideojuegoRPG_Grupo08.genruntimeconfig.cache
+C:\Users\Us\T3_VideojuegoRPG_Grupo08\obj\Debug\net10.0\ref\T3_VideojuegoRPG_Grupo08.dll

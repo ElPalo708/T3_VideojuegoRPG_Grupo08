@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "T3_VideojuegoRPG_Grupo08/1.0.0": {
+        "runtime": {
+          "T3_VideojuegoRPG_Grupo08.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "T3_VideojuegoRPG_Grupo08/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
