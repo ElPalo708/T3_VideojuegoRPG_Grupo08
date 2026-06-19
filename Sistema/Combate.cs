@@ -7,15 +7,24 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
     {
         public void Iniciar(Jugador jugador)
         {
+            Random rnd = new Random();
+
+            int nivelEnemigo = rnd.Next(
+                jugador.Nivel,
+                jugador.Nivel + 4
+            );
+
+            int hpEnemigo = 30 + (nivelEnemigo * 10);
+
             Enemigo enemigo = new Enemigo(
                 "Goblin",
-                1,
-                40,
-                10,
-                3,
-                8,
-                20,
-                15
+                nivelEnemigo,
+                hpEnemigo,
+                6 + (nivelEnemigo * 2),
+                3 + nivelEnemigo,
+                8 + nivelEnemigo,
+                20 * nivelEnemigo,
+                15 * nivelEnemigo
             );
 
             while (jugador.HP > 0 && enemigo.HP > 0)
@@ -30,7 +39,7 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
 
                 Console.WriteLine();
 
-                Console.WriteLine(enemigo.Nombre);
+                Console.WriteLine($"{enemigo.Nombre} (Nivel {enemigo.Nivel})");
                 Console.WriteLine($"HP: {enemigo.HP}/{enemigo.HPMax}");
 
                 Console.WriteLine();
@@ -88,8 +97,6 @@ namespace T3_VideojuegoRPG_Grupo08.Sistema
                         break;
 
                     case "4":
-
-                        Random rnd = new Random();
 
                         if (rnd.Next(100) < 50)
                         {
